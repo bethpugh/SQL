@@ -1,0 +1,37 @@
+--create a makeup store database
+
+create table makeup (id INTEGER PRIMARY KEY, product_type TEXT, brand TEXT, shade TEXT, price INTEGER, rating INTEGER);
+insert into makeup values (1, "eye shadow", "huda beauty", "tan", 20, 4);
+insert into makeup values (2, "foundation", "dior", "light", 35, 5);
+insert into makeup values (3, "lip stick", "nars", "free bird", 26, 4.5);
+insert into makeup values (4, "illuminator", "iconic", "original", 32, 5);
+insert into makeup values (5, "eyeliner", "By Terry", "Terrybleu", 23, 5);
+insert into makeup values (6, "foundation", "Givenchy", "dark", 40, 3);
+insert into makeup values (7, "lip gloss", "mac", "peach", 25, 2);
+insert into makeup values (8, "mascara", "rimmel", "black", 12, 2);
+insert into makeup values (9, "concealer", "hourglass", "silk", 35, 5);
+insert into makeup values (10, "blusher", "mac", "gingerly", 24, 4);
+insert into makeup values (11, "bronzer", "nars", "laguna", 34, 5);
+insert into makeup values (12, "lip liner", "rimmel", "nude", 8, 2);
+insert into makeup values (13, "eye shadow", "B cosmetics", "electronic", 7, 4);
+insert into makeup values (14, "mascara", "maybelline", "brown", 12, 3);
+insert into makeup values (15, "concealer", "iconic", "pink", 23, 3);
+select * from makeup order by price desc;
+select avg(rating) from makeup;
+
+--display the database ordered by price. 
+SELECT * FROM makeup
+ORDER BY price desc; 
+
+--what is the avg price of concealer? 
+SELECT AVG(price) "avg price of concealer"
+FROM makeup
+where product_type='concealer'; 
+
+--what are the 5 best rated items?
+select product_type, brand, price, rating 
+from makeup
+order by rating desc
+limit 5;
+
+/* The most expensive product type that my shop sells is foundation. Rimmel has the worst product ratings overall.
